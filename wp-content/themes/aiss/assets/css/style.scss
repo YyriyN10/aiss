@@ -1,16 +1,36 @@
 /*--- IMPORT ---*/
-
 @import "fonts";
+
+/*
 @import "variables";
 @import "basic";
 @import "popup";
 @import "slick";
 @import "slick-teame";
+@import "bootstrap.css";*/
+
 @import "bootstrap.css";
+@import "tzportfolio.min.css";
+@import "fontawesome-all.min.css";
+@import "off-canvas.css";
+@import "template.css";
+@import "megamenu.css";
+@import "light.css";
+@import "inline";
+
+/*--- Breadcrumbs ---*/
+
+@import "breadcrumbs";
 
 
+
+@import "customizer";
 /*--- HEADER ---*/
 
+@import "service-page";
 
 
+/*--- Page blog ---*/
+
+@import "blog";
 

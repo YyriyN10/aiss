@@ -9,8 +9,10 @@
     "cache-control-max-age": "one-week",
     "cache-control-public": false,
     "scope": [
+        "plugins",
         "themes",
-        "uploads"
+        "uploads",
+        "wp-content"
     ],
     "enable-logging": false,
     "prevent-using-webps-larger-than-original": true,

@@ -1,9 +1,20 @@
 @font-face {
-  font-family: "HarmoniaSansProCyr-Black";
-  src: url("../fonts/HarmoniaSansProCyr-Black/HarmoniaSansProCyr-Black.eot");
-  src: url("../fonts/HarmoniaSansProCyr-Black/HarmoniaSansProCyr-Black.eot?#iefix") format("embedded-opentype"),
-  url("../fonts/HarmoniaSansProCyr-Black/HarmoniaSansProCyr-Black.woff") format("woff"),
-  url("../fonts/HarmoniaSansProCyr-Black/HarmoniaSansProCyr-Black.ttf") format("truetype");
+  font-family: "OpenSansRegular";
+  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
+  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+  url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap; //обязательно
+}
+
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("../fonts/OpenSansBold/OpenSansBold.eot");
+  src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"),
+  url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   font-display: swap; //обязательно

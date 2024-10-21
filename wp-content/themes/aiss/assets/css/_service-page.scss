@@ -1,0 +1,82 @@
+.service-template-template-service-single{
+  .desktop-head-main .h1{font-weight: 700;font-size: 50px;text-transform: uppercase;border: none;color: #fff;margin-bottom: 5px;margin-top: 160px;padding: 10px 10px 10px;border: 1px solid white;}
+  .desktop-head-main .h2{color: white; background: red; text-transform: uppercase; padding: 10px 15px; margin-top: 30px; margin-bottom: 10px; font-weight: bold;font-size: 26px;display: inline-block;}
+  .desktop-head-main .h3{color: white; text-transform: uppercase; margin-top: 5px; font-weight: bold;margin-top: 0!important;margin-bottom: 50px;font-size: 17px;}
+
+  .mobile-head-main .h2{font-weight: bold; font-size: 20px; text-transform: uppercase; border: 1px solid white; color: white; padding: 10px; margin-bottom: 5px; margin-top: 26px;text-align: center;padding: 0;margin: 50px 0 0;line-height: 40px;}
+  .mobile-head-main .h3{color: white; background: red; text-transform: uppercase; padding: 10px 8px; margin-top: 30px; margin-bottom: 10px; font-weight: bold; font-size: 16px; display: inline-block;}
+  .mobile-head-main .h4{color: white; text-transform: uppercase; margin-top: 5px; font-weight: bold; font-size: 16px;}
+
+  .single-service-content{
+    padding-top: 48px;
+
+    /* desktop-solo-img */
+    .desktop-solo-img img{width: 100%;}
+    .desktop-solo-img .row{margin-right: -5px!important;margin-left: -5px!important;}
+    .desktop-solo-img .row .item{padding-right: 5px;padding-left: 5px;}
+    @media (max-width: 550px){
+      .desktop-solo-img .row{margin-right: -15px!important;margin-left: -15px!important;}
+      .desktop-solo-img .row .item{padding-right: 0px;padding-left: 0px;}}
+    /*bec - desktop-solo-img */
+    /* desktop-duo-img */
+    .desktop-duo-img img{width: 100%;}.desktop-duo-img .row{margin-right: -5px!important;margin-left: -5px!important;}.desktop-duo-img .row .item{padding-right: 5px;padding-left: 5px;}@media (max-width: 550px){.desktop-duo-img .row{margin-right: -15px!important;margin-left: -15px!important;}.desktop-duo-img .row .item{padding-right: 0px;padding-left: 0px;}}
+    /*bec - desktop-duo-img */
+
+
+    .text{
+      font-size: 13px;
+      line-height: 22px;
+
+      p{
+        margin: 0 0 20px;
+      }
+
+      ul{
+        li{
+          list-style: none;
+          padding: 0 0 10px 10px;
+          text-align: left;
+
+          &:before{
+            color: red;
+            content: "\f00c";
+            position: relative;
+            top: 2px;
+            display: inline-block;
+            margin-right: 10px;
+            font-family: FontAwesome;
+          }
+        }
+      }
+    }
+  }
+}
+
+.category-main-product-content{
+  .text{
+    font-size: 13px;
+    line-height: 22px;
+
+    p{
+      margin: 0 0 20px;
+    }
+
+    ul{
+      li{
+        list-style: none;
+        padding: 0 0 10px 10px;
+        text-align: left;
+
+        &:before{
+          color: red;
+          content: "\f00c";
+          position: relative;
+          top: 2px;
+          display: inline-block;
+          margin-right: 10px;
+          font-family: FontAwesome;
+        }
+      }
+    }
+  }
+}
