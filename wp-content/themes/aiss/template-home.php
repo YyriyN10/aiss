@@ -42,7 +42,7 @@
 											<div class="head__wrap">
 												<p class="h2"><?php echo $homeMainScreenTitle;?></p>
 												<p class="h3"><?php echo $homeMainScreenRedText;?></p>
-												<p class="h4"><?php echo $homeMainScreenCallText;?>></p>
+												<p class="h4"><?php echo $homeMainScreenCallText;?></p>
 											</div>
 										</div>
 									</div>
@@ -75,9 +75,6 @@
 																<div class="cell-3 center">
 																	<input name="submit" type="submit" value="Хочу розрахунок" class="btn btn-medium main-bg submit" >
 																</div>
-															</div>
-
-															<div class="row">
 															</div>
 														</form>
 													</div>
@@ -322,36 +319,6 @@
                               </div>
                             </div>
 	                      <?php endforeach;?>
-
-                        <style>
-                          .img-holders{position: relative;}
-                          .main-name-holder{position: absolute;bottom: 25px;left: 0;right: 0;text-align: center;background: red;text-transform: uppercase;padding: 5px 0;font-weight: bold;font-size: 18px;}
-                          .main-bg-holder{position: absolute;left: 0;right: 0;top: 0;bottom: 5px;-webkit-transition: all 1s ease;-o-transition: all 1s ease;-moz-transition: all 1s ease;transition: all 1s ease;background: rgba(0, 0, 0, 0.4);}
-                          .main-item-bug{}
-                          .project-names {color: #333;border-bottom: 1px solid #999;display: block;font-weight: bold;font-size: 14px;}
-                          .img-holders a:hover .main-bg-holder{background: rgba(0, 0, 0, 0);}
-                          .main-item-bug-768{min-height: 120px;border-bottom: 2px solid red;}
-                          .main-item-bug .project-names{margin-bottom: 5px;margin-top: 5px;}
-                          .main-item-bug .project-names .fa{
-                            margin: 2px 5px 0;
-                            border-left: 2px solid red;
-                            width: 2px;
-                            height: 14px;
-                            vertical-align: top;
-                          }
-
-                          @media (max-width: 768px){
-                            .cil-main-item{padding-right: 0px;padding-left: 0px;}
-                            .cil-main-item .img-holders{margin-left: 0px;margin-right: 0px;}
-                            .main-item-bug-768 {min-height: auto;border-bottom: 2px solid red;padding-bottom: 10px;}
-                            .cil-main-item .img-holders img{width: 100%;}
-
-                          }
-                        </style>
-
-
-
-
                       </div>
                     </div>
                   </div>
@@ -360,11 +327,7 @@
             </div>
           </div>
       </section>
-
     <?php endif;?>
-
-
-
 <?php
     $automaticGatesTitle = carbon_get_post_meta(get_the_ID(), 'aiss_main_page_automatic_gates_title');
 	  $automaticGatesImage = carbon_get_post_meta(get_the_ID(), 'aiss_main_page_automatic_gates_image');
@@ -389,7 +352,7 @@
                     </div>
                   </div>
                   <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding: 0px;">
-                    <?php echo wpautop($automaticGatesText);?>
+                    <?php echo wpautop( $automaticGatesText );?>
                   </div>
                 </div>
               </div>
@@ -433,7 +396,7 @@
                       <div class="module-ct">
                         <div class="custom"  >
                           <h2 class="block-head"><?php echo $gatesPriceSubtitle;?></h2>
-                          <table class="table-style2">
+                          <table class="table-style2 custom-table">
                             <thead>
                             <tr>
                               <th class="main-bg" style="padding: 10px;">Типи воріт</th>
@@ -450,7 +413,7 @@
                             </tbody>
                           </table>
                           <hr>
-                          <table class="table-style2">
+                          <table class="table-style2 custom-table">
                             <thead>
                             <tr>
                               <th class="main-bg" style="padding: 10px;">Продукція</th>
@@ -522,6 +485,58 @@
             </div>
           </section>
     <?php endif;?>
+<?php
+	$caseImageArgs = array(
+		'posts_per_page' => -1,
+		'orderby' 	 => 'date',
+		'post_type'  => 'case',
+		'post_status'    => 'publish',
+		'meta_query' => array(
+			array(
+				'key' => 'aiss_case_post_content_type',
+				'value' => 'image',
+			),
+		),
+	);
+
+	$caseImageList = new WP_Query( $caseImageArgs );
+
+	if ( $caseImageList->have_posts() ) :?>
+    <section id="tz-position5-wrapper" class="desktop home-photo-case-wrapper">
+      <div class="container">
+        <div class="row" id="position5">
+          <div id="tz-position-5" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+            <div class="tz-module module " id="Mod414">
+              <div class="module-inner">
+                <div class="module-ct">
+                  <div class="custom">
+                    <h2 class="block-head">фото автоматичних воріт</h2>
+                    <div class="popup-gallery">
+	                  <?php while ( $caseImageList->have_posts() ) : $caseImageList->the_post(); ?>
+	                    <?php
+                        $photoLink = carbon_get_post_meta(get_the_ID(), 'aiss_case_post_content_image');
+                        $photoType = carbon_get_post_meta(get_the_ID(), 'aiss_case_post_content_gait_type');
+	                    ?>
+                      <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                        <a href="<?php echo $photoLink ;?>" title="<?php the_title();?>" data-fancybox="photo-gallery">
+                          <img src="<?php echo $photoLink ;?>" alt="<?php echo $photoType;?>" title="<?php the_title();?>">
+                          <span class="bg_item"></span>
+                          <span class="h2"><?php the_title();?></span>
+                          <span class="span"><?php echo $photoType;?></span>
+                        </a>
+                      </div>
+                    <?php endwhile;?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
+<?php wp_reset_postdata(); ?>
 
     <?php
         $howOrderTitle = carbon_get_post_meta(get_the_ID(), 'aiss_main_page_how_order_title');
@@ -541,11 +556,12 @@
                         <div class="custom"  >
                           <h2 class="block-head"><?php echo $howOrderTitle;?></h2>
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
-                            <?php echo wpautop($howOrderText);?>
+                            <div class="text"><?php echo wpautop($howOrderText);?></div>
                           </div>
 
                           <h2 class="block-head"><?php echo $howOrderEditingTitle;?></h2>
-                          <?php echo wpautop($howOrderEditingText);?>
+                          <div class="text"><?php echo wpautop($howOrderEditingText);?></div>
+
                         </div>
                       </div>
                     </div>
@@ -619,7 +635,7 @@
                                   <?php foreach( $ourVideoList as $item ):?>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 center item">
                                       <div class="videoWrapper" data-video="<?php echo $item['video_id'];?>">
-                                        <div id="player1"></div>
+                                        <div class="youtube" id="<?php echo $item['video_id'];?>"></div>
                                       </div>
                                       <span class="h5"><?php echo $item['video_name'];?></span>
                                     </div>

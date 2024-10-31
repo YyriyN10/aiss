@@ -43,22 +43,22 @@
 							    <div class="module-inner">
 								    <div class="module-ct">
 									    <div class="custom"  >
-										    <div class="desktop desktop-head-main" style="background: url(<?php echo $productMainScreenImage;?>) 100% 100% no-repeat; background-size: cover; height: 525px; padding: 0px;">
-											    <div class="row" style="text-align: center;">
-												    <div style="width: 800px; margin: 0px auto;">
+										    <div class="desktop desktop-head-main" style="background: url(<?php echo $productMainScreenImage;?>) 100% 100% no-repeat; ">
+											    <div class="row">
+												    <div class="h1-wrapper" >
 													    <p class="h1"><?php the_title();?></p>
 												    </div>
-												    <div style="width: 550px; margin: 0px auto;">
+												    <div class="h2-wrapper">
 													    <p class="h2"><?php echo $productMainScreenRedText;?></p>
 												    </div>
 												    <p class="h3"><?php echo $productMainScreenCallText;?></p>
 											    </div>
 										    </div>
-										    <div class="mobile mobile-head-main" style="display: none; height: 250px; background: url(<?php echo $productMainScreenImage;?>) 100% 100% no-repeat; background-size: cover; ">
+										    <div class="mobile mobile-head-main" style="background: url(<?php echo $productMainScreenImage;?>) 100% 100% no-repeat; ">
 											    <div class="row">
-												    <div class="col-md-12" style="text-align: center; margin: 0px;">
+												    <div class="col-md-12" >
 													    <p class="h2"><?php the_title();?></p>
-													    <p class="h3"><span style="background: red; padding: 5px 15px;"><?php echo $productMainScreenRedText;?></span></p>
+													    <p class="h3"><span><?php echo $productMainScreenRedText;?></span></p>
 													    <p class="h4"><?php echo $productMainScreenCallText;?></p>
 												    </div>
 											    </div>
@@ -68,25 +68,25 @@
 							    </div>
 						    </div>
 						    <?php
-						    $productArgs = array(
-							    'tax_query' => array(
-								    array(
-									    'taxonomy' => 'product_page_tax',
-									    'field' => 'id',
-									    'lang' => false,
-									    'suppress_filters' => false,
-									    'terms' => $productCategoryId
+                  $productArgs = array(
+                    'tax_query' => array(
+                      array(
+                        'taxonomy' => 'product_page_tax',
+                        'field' => 'id',
+                        'lang' => false,
+                        'suppress_filters' => false,
+                        'terms' => $productCategoryId
 
-								    )
-							    ),
-							    'post_type' => 'products',
-							    'orderby' 	 => 'date',
-							    'suppress_filters' => false,
-							    'lang' => false,
-							    'posts_per_page' => -1
-						    );
+                      )
+                    ),
+                    'post_type' => 'products',
+                    'orderby' 	 => 'date',
+                    'suppress_filters' => false,
+                    'lang' => false,
+                    'posts_per_page' => -1
+                  );
 
-						    $productList = new WP_Query( $productArgs );
+                  $productList = new WP_Query( $productArgs );
 
 						    if ( $productList->have_posts() ) :?>
 						    <div class="tz-module module " id="Mod453">
@@ -149,7 +149,7 @@
 												    <?php if( $item['media_type_part_1_image'] ):?>
 													    <div class="desktop-solo-img">
 														    <div class="row">
-															    <div class="col-lg-12 center item">
+															    <div class="center item">
 																    <a href="#fca-widget">
 																	    <img
 																		    src="<?php echo wp_get_attachment_image_src($item['media_type_part_1_image'], 'full')[0];?>"
@@ -184,7 +184,7 @@
 											    <?php elseif ( $item['media_type_part_1'] == 'video' ):?>
 												    <div class="video-max-Wrapper">
 													    <div class="videoWrapper" data-video="<?php echo $item['media_type_part_1_video'];?>">
-														    <div id="player1"></div>
+                                <div class="youtube" id="<?php echo $item['media_type_part_1_video'];?>"></div>
 													    </div>
 												    </div>
 											    <?php elseif ( $item['media_type_part_1'] == 'form' ):?>
@@ -227,7 +227,7 @@
 													    <?php foreach( $item['media_type_part_1_gallery'] as $galleryItem ):?>
 														    <div class="popup-gallery popup-gallery-2">
 															    <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
-																    <a href="<?php echo wp_get_attachment_image_src($galleryItem['image'], 'full')[0];?>" >
+																    <a href="<?php echo wp_get_attachment_image_src($galleryItem['image'], 'full')[0];?>" data-fancybox="product-media-gallery-1" >
 																	    <img
 																	       src="<?php echo wp_get_attachment_image_src($galleryItem['image'], 'full')[0];?>"
 																	       alt="<?php echo get_post_meta($galleryItem['image'], '_wp_attachment_image_alt', TRUE);?>"
@@ -247,7 +247,7 @@
 												    <?php if( $item['media_type_part_2_image'] ):?>
 													    <div class="desktop-solo-img">
 														    <div class="row">
-															    <div class="col-lg-12 center item">
+															    <div class="center item">
 																    <a href="#fca-widget">
 																	    <img
 																		    src="<?php echo wp_get_attachment_image_src($item['media_type_part_2_image'], 'full')[0];?>"
@@ -281,8 +281,8 @@
 												    </div>
 											    <?php elseif ( $item['media_type_part_2'] == 'video' ):?>
 												    <div class="video-max-Wrapper">
-													    <div class="videoWrapper" data-video="<?php echo $item['media_type_part_2_video'];?>">
-														    <div id="player1"></div>
+													    <div class="videoWrapper"">
+                                <div class="youtube" id="<?php echo $item['media_type_part_2_video'];?>"></div>
 													    </div>
 												    </div>
 											    <?php elseif ( $item['media_type_part_2'] == 'form' ):?>
@@ -325,7 +325,7 @@
 													    <?php foreach( $item['media_type_part_2_gallery'] as $galleryItem ):?>
 														    <div class="popup-gallery popup-gallery-2">
 															    <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
-																    <a href="<?php echo wp_get_attachment_image_src($galleryItem['image'], 'full')[0];?>" >
+																    <a href="<?php echo wp_get_attachment_image_src($galleryItem['image'], 'full')[0];?>" data-fancybox="product-media-gallery-2">
 																	    <img
 																		    src="<?php echo wp_get_attachment_image_src($galleryItem['image'], 'full')[0];?>"
 																		    alt="<?php echo get_post_meta($galleryItem['image'], '_wp_attachment_image_alt', TRUE);?>"
@@ -347,18 +347,22 @@
 							    </div>
 						    </div>
 					    </div>
+              <?php
+                $smallSaleBanner = carbon_get_theme_option('aiss_option_small_banner_image');
 
-					    <aside id="tz-right" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
-						    <div class="tz-module module " id="Mod440">
-							    <div class="module-inner">
-								    <div class="module-ct">
-									    <div class="custom"  >
-										    <img src="<?php echo carbon_get_post_meta( get_the_ID(), 'aiss_product_type_page_sale_small_image');?>" alt=""/>
-									    </div>
-								    </div>
-							    </div>
-						    </div>
-					    </aside>
+                if ( $smallSaleBanner ):?>
+                <aside id="tz-right" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+                  <div class="tz-module module " id="Mod440">
+                    <div class="module-inner">
+                      <div class="module-ct">
+                        <div class="custom"  >
+                          <img src="<?php echo $smallSaleBanner;?>" alt=""/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              <?php endif;?>
 				    </div>
 			    </div>
 		    </section>

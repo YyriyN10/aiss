@@ -35,6 +35,10 @@
 			         Field::make_text('aiss_option_contact_main_email', 'E-mail')
 			              ->set_attribute('type', 'email'),
 
+			         Field::make_text('aiss_option_contact_main_manager', 'Іʼмя менеджера'),
+			         Field::make_text('aiss_option_contact_main_manager_post', 'Назва посади менеджера'),
+			         Field::make_text('aiss_option_contact_main_manager_phone', 'Телефон менеджера менеджера'),
+
 		         ) )
 
 		         ->add_tab( 'Соціальні мережі', array(
@@ -70,10 +74,20 @@
 			        Field::make_image('aiss_option_logo', 'Логотип')
 			            ->set_type('image')
 			            ->set_value_type('url'),
-			         Field::make_text('aiss_option_blog_main_title', 'Головний заголовок блогу'),
-			         Field::make_image('aiss_option_blog_main_image', 'Зображення')
+			        Field::make_text('aiss_option_blog_main_title', 'Головний заголовок блогу'),
+			        Field::make_image('aiss_option_blog_main_image', 'Головне зображення сторінки блогу')
 			              ->set_type('image')
 			              ->set_value_type('url'),
+			        Field::make_text('aiss_option_blog_popular_tags', 'Заголовок "Популяоні теги"'),
+			        Field::make_text('aiss_option_blog_popular_posts', 'Заголовок "Популяоні posts"'),
+			        Field::make_image('aiss_option_small_banner_image', 'Зображення маленького рекламного банеру з контактами')
+			             ->set_type('image')
+			             ->set_value_type('url'),
+			        Field::make_image('aiss_option_case_main_image', 'Головне зображення сторінки прикладів робіт')
+			              ->set_type('image')
+			              ->set_value_type('url'),
+			        Field::make_text('aiss_option_case_video_title', 'Заголовок відеоприкладів'),
+			         Field::make_text('aiss_option_case_photo_title', 'Заголовок фотоприкладів'),
 
 		         ) );
 	}

@@ -325,20 +325,22 @@
 							    </div>
 						    </div>
 					    </div>
-					    <?php
-						    $bannerSmall = carbon_get_post_meta(get_the_ID(), 'aiss_service_post_fields_sale_small_image');
-					    ?>
-					    <aside id="tz-right" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
-						    <div class="tz-module module " id="Mod440">
-							    <div class="module-inner">
-								    <div class="module-ct">
-									    <div class="custom"  >
-										    <img src="<?php echo $bannerSmall;?>" alt=""/>
-									    </div>
-								    </div>
-							    </div>
-						    </div>
-					    </aside>
+              <?php
+              $smallSaleBanner = carbon_get_theme_option('aiss_option_small_banner_image');
+
+              if ( $smallSaleBanner ):?>
+                <aside id="tz-right" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+                  <div class="tz-module module " id="Mod440">
+                    <div class="module-inner">
+                      <div class="module-ct">
+                        <div class="custom"  >
+                          <img src="<?php echo $smallSaleBanner;?>" alt=""/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              <?php endif;?>
 				    </div>
 			    </div>
 		    </section>

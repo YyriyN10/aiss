@@ -1,4 +1,75 @@
-jQuery(function() {
+jQuery(function($) {
+
+  /*$('.popup-gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    tLoading: 'Loading image #%curr%...',
+    mainClass: 'mfp-img-mobile',
+    gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+    },
+    image: {
+      tError: '<a href="/%url%">The image #%curr%</a> could not be loaded.',
+      titleSrc: function(item) {
+        return item.el.attr('title');
+      }
+    }
+  });*/
+
+
+//Fancybox Init
+
+  jQuery('[data-fancybox]').fancybox({
+    protect: true,
+    loop : true,
+    fullScreen : true,
+    scrolling : 'yes',
+    image : {
+      preload : "auto",
+      protect : true
+    },
+    buttons: [
+      "zoom",
+      "slideShow",
+      "fullScreen",
+      "close"
+    ]
+
+  });
+
+  /**
+   * Tags navigation
+   */
+
+
+  /*jQuery('.blob-tag').on('click', function(e){
+    e.preventDefault();
+
+    let tagId = Number(jQuery(this).attr('data-tagid'));
+    let tagName = jQuery(this).text();
+
+    let data = {
+      action: 'add_tag_posts',
+      tagId: tagId,
+      tagName: tagName
+    }
+
+    jQuery.post( aiss_ajax.url, data, function(response) {
+
+      if(jQuery.trim(response) !== ''){
+
+        jQuery('#main').html(response);
+      }
+    });
+
+
+  });*/
+
+
+
+
 
 
   //Get Window Width, Height

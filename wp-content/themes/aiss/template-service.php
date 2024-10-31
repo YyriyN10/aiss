@@ -143,8 +143,7 @@
                             <?php if( $servicesContentVideo ):?>
                               <div class="video-max-Wrapper">
                                 <div class="videoWrapper" data-video="<?php echo $servicesContentVideo;?>">
-                                  <div id="player1"></div>
-
+                                  <div class="youtube" id="<?php echo $servicesContentVideo;?>"></div>
                                 </div>
                               </div>
                             <?php endif;?>

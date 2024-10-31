@@ -19,8 +19,22 @@ const sass = gulpSass(dartSass);*/
 }*/
 function scripts(){
   return src([//файли які потрібно об'єднати та зжати
-    'js/bootstrap.js',
-    'js/jquery.lazy.js',
+    'js/bootstrap.min.js',
+    'js/off-canvas.js',
+    'js/script.min.js',
+    'js/menu.min.js',
+    'js/jquery.nicescroll.min.js',
+    'js/jquery.prettyPhoto.js',
+    'js/jquery.nav.js',
+    'js/jquery.totemticker.min.js',
+    'js/waypoints.min.js',
+    'js/jquery.animateNumber.min.js',
+    'js/jquery.easypiechart.min.js',
+    'js/jquery.sharrre.min.js',
+    'js/page.js',
+    'js/main.js',
+    'js/youtube.js',
+    'js/jquery.fancybox.min.js',
     'js/js.js'//завжди останній, важлива послідовність
   ])
     .pipe(concat('main.min.js'))//ім'я згенерованого файлу

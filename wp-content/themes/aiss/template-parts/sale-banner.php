@@ -5,7 +5,7 @@
 
 	?>
 
-<section id="tz-position-10-wrapper" class="salle-block">
+<section id="tz-position-10-wrapper" class="sale-block">
 	<div class="container">
 		<div class="row" id="position-10">
 			<div id="tz-position-10" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  tz container">
@@ -17,7 +17,7 @@
 								<style>.mine-tania .desktop p.form{font-weight: 700;}</style>
 
 								<div class="desktop">
-									<div class="row" style="color: white; margin: 0px 0px 0px 0px; padding: 30px; background: url(<?php echo $args['banner'];?>) 100% 100% no-repeat; background-size: cover; height: 460px;">
+									<div class="row contact-container" style="background: url(<?php echo $args['banner'];?>) 100% 100% no-repeat; ">
 										<div class="col-md-7"></div>
 										<div class="col-md-4" style="padding: 20px; background: white; border: 1px solid #d2d2d2;">
 											<p style="text-align: center; margin: 5px 0px; color: black; font-size: 20px; font-weight: bold;"><?php echo $args['title'];?></p>

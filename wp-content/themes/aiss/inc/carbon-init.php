@@ -26,3 +26,5 @@ require ('carbon-fiels/services-page.php');
 require ('carbon-fiels/post-types-fields.php');
 require ('carbon-fiels/documentation-page.php');
 require ('carbon-fiels/product-page.php');
+require ('carbon-fiels/contact-page.php');
+require ('carbon-fiels/about-us-page.php');

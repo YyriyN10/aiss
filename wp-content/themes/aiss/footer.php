@@ -44,55 +44,17 @@
                 <div class="module-ct">
                   <div class="widget r-posts-w fx" data-animate="fadeInRight">
                     <div class="widget-content">
-                      <ul>
-                        <li>
-                          <div class="post-img">
-                            <img src="media/tz_portfolio/article/cache/5c27d82860994tz_portfolio_1546115112-163_XL.jpg" alt="">
-                          </div>
-                          <div class="widget-post-info">
-                            <p style="font-weight: 400;overflow: hidden;margin-bottom: 8px;height: 18px;-ms-text-overflow: ellipsis;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;font-size: 13px;">
-                              <a href="polezno-znat/avtomaticheskie-vorota-s-nuzhnymi-razmerami-po-nizkoj-tsene/163.html">
-                                Автоматические ворота с нужными размерами по низкой цене.                                    </a>
-                            </p>
-                            <div class="meta">
-                              <a href="polezno-znat/avtomaticheskie-vorota-s-nuzhnymi-razmerami-po-nizkoj-tsene/163.html">
-                                <i class="fa fa-comments"></i>0                                    </a>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="post-img">
-                            <img src="media/tz_portfolio/article/cache/5c25d935d74a9tz_portfolio_1545984309-162_XL.jpg" alt="">
-                          </div>
-                          <div class="widget-post-info">
-                            <p style="font-weight: 400;overflow: hidden;margin-bottom: 8px;height: 18px;-ms-text-overflow: ellipsis;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;font-size: 13px;">
-                              <a href="polezno-znat/gde-zakazat-avtomaticheskie-vorota-s-oplatoj-nalichnymi-ili-v-rassrochku/162.html">
-                                Где заказать автоматические ворота с оплатой наличными или в рассрочку?                                    </a>
-                            </p>
-
-                            <div class="meta">
-                              <a href="polezno-znat/gde-zakazat-avtomaticheskie-vorota-s-oplatoj-nalichnymi-ili-v-rassrochku/162.html">
-                                <i class="fa fa-comments"></i>0                                    </a>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="post-img">
-                            <img src="media/tz_portfolio/article/cache/dva-tipa-firmennykh-sdvizhnykh-vorot-aiss-grupp-dlya-vashego-ob-ekta-161_XL.jpg" alt="">
-                          </div>
-                          <div class="widget-post-info">
-                            <p style="font-weight: 400;overflow: hidden;margin-bottom: 8px;height: 18px;-ms-text-overflow: ellipsis;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;font-size: 13px;">
-                              <a href="polezno-znat/dva-tipa-firmennykh-sdvizhnykh-vorot-aiss-grupp-dlya-vashego-ob-ekta/161.html">
-                                Два типа фирменных сдвижных ворот «Аисс Групп» для вашего объекта.                                     </a>
-                            </p>
-
-                            <div class="meta">
-                              <a href="polezno-znat/dva-tipa-firmennykh-sdvizhnykh-vorot-aiss-grupp-dlya-vashego-ob-ekta/161.html">
-                                <i class="fa fa-comments"></i>0                                    </a>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
+	                    <?php
+		                    wp_nav_menu(
+			                    array(
+				                    'theme_location' => 'menu_4',
+				                    'menu_id'        => 'footer-posts',
+				                    'container' => false,
+				                    'menu_class' => 'footer-posts menu',
+		                        'walker'     => new Footer_Posts_Walker_Nav_Menu()
+			                    )
+		                    );
+	                    ?>
                     </div>
                   </div>
                 </div>
@@ -107,8 +69,6 @@
                 <div class="module-ct">
 
                   <div class="custom"  >
-                    <style>.main-footer-p{font-size: 15px;}</style>
-
                     <ul>
                         <?php
 	                        $contactsList = carbon_get_theme_option('aiss_option_contact_city');
