@@ -78,17 +78,35 @@
 			        Field::make_image('aiss_option_blog_main_image', 'Головне зображення сторінки блогу')
 			              ->set_type('image')
 			              ->set_value_type('url'),
+			         Field::make_text('aiss_option_share_main_title', 'Головний заголовок акцій'),
+			         Field::make_image('aiss_option_share_main_image', 'Головне зображення сторінки акцій')
+			              ->set_type('image')
+			              ->set_value_type('url'),
 			        Field::make_text('aiss_option_blog_popular_tags', 'Заголовок "Популяоні теги"'),
 			        Field::make_text('aiss_option_blog_popular_posts', 'Заголовок "Популяоні posts"'),
 			        Field::make_image('aiss_option_small_banner_image', 'Зображення маленького рекламного банеру з контактами')
 			             ->set_type('image')
 			             ->set_value_type('url'),
+			        Field::make_image('aiss_option_big_banner_image', 'Зображення банеру у блоці відділу продажів')
+			              ->set_type('image')
+			              ->set_value_type('url'),
 			        Field::make_image('aiss_option_case_main_image', 'Головне зображення сторінки прикладів робіт')
 			              ->set_type('image')
 			              ->set_value_type('url'),
 			        Field::make_text('aiss_option_case_video_title', 'Заголовок відеоприкладів'),
 			         Field::make_text('aiss_option_case_photo_title', 'Заголовок фотоприкладів'),
 
-		         ) );
+		         ) )
+				->add_tab( 'Редіректи', array(
+					Field::make_complex('aiss_option_redirect_list', 'Перелік редіректів')
+					     ->add_fields(array(
+						     Field::make_text('old_url', 'Стара адреса')
+						          ->set_help_text('Треба вказувати без адреси домену'),
+						     Field::make_text('new_url', 'Нова адреса')
+						          ->set_help_text('Треба вказувати повну адресу.'),
+					     ))
+
+				) );
+
 	}
 

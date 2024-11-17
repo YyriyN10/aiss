@@ -347,15 +347,13 @@
 	<?php endif;?>
 
 <?php
-	$saleBigBanner = carbon_get_post_meta(get_the_ID(), 'aiss_service_post_fields_sale_big_image');
 	$saleTitle = carbon_get_post_meta(get_the_ID(), 'aiss_service_post_fields_sale_title');
 	$saleBtnText = carbon_get_post_meta(get_the_ID(), 'aiss_service_post_fields_sale_btn_text');
 
-	if ( $saleBigBanner && $saleBtnText && $saleTitle ){
+	if ( $saleBtnText && $saleTitle ){
 
 		$content = array(
 			'title' => $saleTitle,
-			'banner' => $saleBigBanner,
 			'btn_text' => $saleBtnText
 		);
 

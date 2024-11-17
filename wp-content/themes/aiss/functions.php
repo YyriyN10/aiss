@@ -415,3 +415,55 @@ add_action( 'init', 'addCustomCategoryInPage' );
 		}
 
 	}
+
+	/**
+	 * Form integration
+	 */
+
+	add_action('admin_post_form_integration', 'form_integration_callback');
+	add_action('admin_post_nopriv_form_integration', 'form_integration_callback');
+
+	function form_integration_callback(){
+		//Если форма отправлена //
+		if(isset($_POST['submit'])) {
+
+			//Проверка поля ТЕЛЕФОН     //
+			if(trim($_POST['userphone']) == '') {
+				$hasError = true;
+			} else {
+				$userphone = trim($_POST['userphone']);
+			}
+
+			//Проверка поля width     //
+			if(trim($_POST['width']) == '') {
+				$hasError = true;
+			} else {
+				$width = trim($_POST['width']);
+			}
+			//Проверка поля width     //
+			if(trim($_POST['height']) == '') {
+				$hasError = true;
+			} else {
+				$height = trim($_POST['height']);
+			}
+			//Проверка назви сторінки    //
+			if(trim($_POST['page-name']) == '') {
+				$hasError = true;
+			} else {
+				$pageName = trim($_POST['page-name']);
+			}
+
+			//Если ошибок нет, отправить email    //
+			if(!isset($hasError)) {
+				$emailTo = 'mng8@aiss.com.ua'; //Сюда введите Ваш email //
+				$body = "Заказ на расчет ворот с https://aiss.com.ua/ $pageName \n\nТелефон: $userphone \n\nДанные заказчика:\n\nШирина: $width м\n\nВысота: $height м";
+				$headers = 'From: aiss.com.ua';
+				$headers.= "Content-Type:text/html; charset=UTF-8";
+				$subject = "Новая заявка с сайта https://aiss.com.ua/ - Расчет ворот $pageName" ;
+				mail($emailTo, $subject, $body, $headers);
+				header('Location: /thanks-main');
+				$emailSent = true;     } else {
+				header('Location: https://aiss.com.ua/');
+			}
+		}
+	}

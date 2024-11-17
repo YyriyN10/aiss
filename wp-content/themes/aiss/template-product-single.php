@@ -87,10 +87,12 @@
                           </div>
                         </div>
                         <div class="row">
-                          <form action="https://aiss.com.ua/zakaz_garage.php" method="post">
-                            <div class="cell-3 center"><input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__" /></div>
+                          <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                            <input type="hidden" name="action" value="form_integration">
+                            <input type="hidden" name="page-name" value="<?php the_title();?>">
+                            <div class="cell-3 center"><input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__" /></div>
                             <div class="cell-3 center"><input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м" /></div>
-                            <div class="cell-3 center"><input name="height" size="40" type="text" class="form-control" placeholder="Высота, м" /></div>
+                            <div class="cell-3 center"><input name="height" size="40" type="text" class="form-control" placeholder="Висота, м" /></div>
                             <div class="cell-3 center"><input name="submit" type="submit" value="<?php echo $productCallFormBtn;?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;" /></div>
                           </form>
                         </div>
@@ -108,10 +110,12 @@
                         </div>
                       </div>
                       <div class="row">
-                        <form action="https://aiss.com.ua/zakaz_garage.php" method="post">
-                          <div class="cell-12 center"><input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__" /></div>
+                        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                          <input type="hidden" name="action" value="form_integration">
+                          <input type="hidden" name="page-name" value="<?php the_title();?>">
+                          <div class="cell-12 center"><input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__" /></div>
                           <div class="cell-12 center" style="margin-top: 5px;"><input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м" /></div>
-                          <div class="cell-12 center" style="margin-top: 5px;"><input name="height" size="40" type="text" class="form-control" placeholder="Высота, м" /></div>
+                          <div class="cell-12 center" style="margin-top: 5px;"><input name="height" size="40" type="text" class="form-control" placeholder="Висота, м" /></div>
                           <div class="cell-12 center" style="margin-top: 5px;"><input name="submit" type="submit" value="Хочу расчет" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;" /></div>
                         </form>
                       </div>
@@ -200,7 +204,9 @@
                                     <div class="popap-bg modal_close" style="display: none;"></div>
                                     <div class="col-md-12 form-popap-main" style="">
                                       <span class="modal_close" style="cursor: pointer;text-align: right;margin: 10px;">X</span>
-                                      <form action="/zakaz_main.php" method="post">
+                                      <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                                        <input type="hidden" name="action" value="form_integration">
+                                        <input type="hidden" name="page-name" value="<?php the_title();?>">
                                         <div class="col-md-12 zagolovoc" style="">
                                           <span style=""><?php echo $item['media_type_part_1_form_title_1'];?></span>
 	                                        <?php echo $item['media_type_part_1_form_title_2'];?>
@@ -210,10 +216,10 @@
                                           <input style="" name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
                                         </div>
                                         <div class="center" style="">
-                                          <input style="" name="height" size="40" type="text" class="form-control" placeholder="Высота, м">
+                                          <input style="" name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
                                         </div>
                                         <div class="center" style="">
-                                          <input style="" name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__">
+                                          <input style="" name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
                                         </div>
                                         <div class="batton-form" style="">
                                           <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_form_btn'];?>" class="btn btn-medium main-bg submit" style="">
@@ -314,16 +320,18 @@
                                           </h2>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: #333333;">
-                                          <form action="https://aiss.com.ua/zakaz_avtom_otkat.php" method="post">
+                                          <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                                            <input type="hidden" name="action" value="form_integration">
+                                            <input type="hidden" name="page-name" value="<?php the_title();?>">
                                             <div class="center item">
-                                              <input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__">
+                                              <input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
                                             </div>
 
                                             <div class="center item">
                                               <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
                                             </div>
                                             <div class="center item">
-                                              <input name="height" size="40" type="text" class="form-control" placeholder="Высота, м">
+                                              <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
                                             </div>
                                             <div class="center item">
                                               <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -349,16 +357,18 @@
                                           </h2>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: #333333;">
-                                          <form action="https://aiss.com.ua/zakaz_avtom_otkat.php" method="post">
+                                          <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                                            <input type="hidden" name="action" value="form_integration">
+                                            <input type="hidden" name="page-name" value="<?php the_title();?>">
                                             <div class="center item">
-                                              <input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__">
+                                              <input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
                                             </div>
 
                                             <div class="center item">
                                               <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
                                             </div>
                                             <div class="center item">
-                                              <input name="height" size="40" type="text" class="form-control" placeholder="Высота, м">
+                                              <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
                                             </div>
                                             <div class="center item">
                                               <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -429,7 +439,9 @@
                                   <div class="popap-bg modal_close" style="display: none;"></div>
                                   <div class="col-md-12 form-popap-main" style="">
                                     <span class="modal_close" style="cursor: pointer;text-align: right;margin: 10px;">X</span>
-                                    <form action="/zakaz_main.php" method="post">
+                                    <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                                      <input type="hidden" name="action" value="form_integration">
+                                      <input type="hidden" name="page-name" value="<?php the_title();?>">
                                       <div class="col-md-12 zagolovoc" style="">
                                         <span style=""><?php echo $item['media_type_part_2_form_title_1'];?></span>
                                         <?php echo $item['media_type_part_2_form_title_2'];?>
@@ -439,10 +451,10 @@
                                           <input style="" name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
                                         </div>
                                         <div class="center" style="">
-                                          <input style="" name="height" size="40" type="text" class="form-control" placeholder="Высота, м">
+                                          <input style="" name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
                                         </div>
                                         <div class="center" style="">
-                                          <input style="" name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__">
+                                          <input style="" name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
                                         </div>
                                         <div class="batton-form" style="">
                                           <input name="submit" type="submit" value="<?php echo $item['media_type_part_2_form_btn'];?>" class="btn btn-medium main-bg submit" style="">
@@ -543,16 +555,18 @@
                                                 </h2>
                                               </div>
                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: #333333;">
-                                                <form action="https://aiss.com.ua/zakaz_avtom_otkat.php" method="post">
+                                                <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                                                  <input type="hidden" name="action" value="form_integration">
+                                                  <input type="hidden" name="page-name" value="<?php the_title();?>">
                                                   <div class="center item">
-                                                    <input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__">
+                                                    <input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
                                                   </div>
 
                                                   <div class="center item">
                                                     <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
                                                   </div>
                                                   <div class="center item">
-                                                    <input name="height" size="40" type="text" class="form-control" placeholder="Высота, м">
+                                                    <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
                                                   </div>
                                                   <div class="center item">
                                                     <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -579,16 +593,18 @@
                                         </h2>
                                       </div>
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: #333333;">
-                                        <form action="https://aiss.com.ua/zakaz_avtom_otkat.php" method="post">
+                                        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                                          <input type="hidden" name="action" value="form_integration">
+                                          <input type="hidden" name="page-name" value="<?php the_title();?>">
                                           <div class="center item">
-                                            <input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__">
+                                            <input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
                                           </div>
 
                                           <div class="center item">
                                             <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
                                           </div>
                                           <div class="center item">
-                                            <input name="height" size="40" type="text" class="form-control" placeholder="Высота, м">
+                                            <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
                                           </div>
                                           <div class="center item">
                                             <input name="submit" type="submit" value="<?php echo $item['media_type_part_2_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -634,15 +650,13 @@
 	<?php endif;?>
 
 <?php
-	$saleBigBanner = carbon_get_post_meta(get_the_ID(), 'aiss_product_post_fields_sale_big_image');
 	$saleTitle = carbon_get_post_meta(get_the_ID(), 'aiss_product_post_fields_sale_title');
 	$saleBtnText = carbon_get_post_meta(get_the_ID(), 'aiss_product_post_fields_sale_btn_text');
 
-	if ( $saleBigBanner && $saleBtnText && $saleTitle ){
+	if ( $saleBtnText && $saleTitle ){
 
 		$content = array(
 			'title' => $saleTitle,
-			'banner' => $saleBigBanner,
 			'btn_text' => $saleBtnText
 		);
 

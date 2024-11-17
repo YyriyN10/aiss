@@ -28,3 +28,5 @@ require ('carbon-fiels/documentation-page.php');
 require ('carbon-fiels/product-page.php');
 require ('carbon-fiels/contact-page.php');
 require ('carbon-fiels/about-us-page.php');
+require ('carbon-fiels/thx-page.php');
+require ('carbon-fiels/shares-page.php');

@@ -39,6 +39,10 @@ jQuery(function($) {
 
   });
 
+  // PHONE MASK
+
+  jQuery("input[type=tel]").mask("+38(099) 999-99-99");
+
   /**
    * Tags navigation
    */
@@ -393,9 +397,7 @@ jQuery(function($) {
         jQuery('.mein-slider').slick('slickNext');
     });*/
 
-    // PHONE MASK
 
-    /*jQuery("input[type=tel]").mask("+38(999) 999-99-99");*/
 
     // DTA VALUE REPLACE
 

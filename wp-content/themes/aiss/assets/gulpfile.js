@@ -35,6 +35,7 @@ function scripts(){
     'js/main.js',
     'js/youtube.js',
     'js/jquery.fancybox.min.js',
+    'js/jquery.maskedinput.min.js',
     'js/js.js'//завжди останній, важлива послідовність
   ])
     .pipe(concat('main.min.js'))//ім'я згенерованого файлу

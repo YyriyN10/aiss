@@ -90,6 +90,12 @@
                                 </a>
                                 <span class="divider"></span>
                               </li>
+                              <li>
+                                <a href="<?php echo get_permalink();?>" class="pathway">
+			                        <?php echo get_the_title( );?>
+                                </a>
+                                <span class="divider"></span>
+                              </li>
 	                          <?php endwhile;?>
                           <?php endif; ?>
 	                        <?php wp_reset_postdata(); ?>

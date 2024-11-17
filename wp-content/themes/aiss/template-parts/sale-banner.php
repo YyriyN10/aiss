@@ -17,7 +17,7 @@
 								<style>.mine-tania .desktop p.form{font-weight: 700;}</style>
 
 								<div class="desktop">
-									<div class="row contact-container" style="background: url(<?php echo $args['banner'];?>) 100% 100% no-repeat; ">
+									<div class="row contact-container" style="background: url(<?php echo carbon_get_theme_option('aiss_option_big_banner_image');?>) 100% 100% no-repeat; ">
 										<div class="col-md-7"></div>
 										<div class="col-md-4" style="padding: 20px; background: white; border: 1px solid #d2d2d2;">
 											<p style="text-align: center; margin: 5px 0px; color: black; font-size: 20px; font-weight: bold;"><?php echo $args['title'];?></p>

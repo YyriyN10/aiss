@@ -67,9 +67,11 @@
 													</div>
 
 													<div class="row 1">
-														<form action="https://aiss.com.ua/zakaz_main.php" method="post">
+                            <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                              <input type="hidden" name="action" value="form_integration">
+                              <input type="hidden" name="page-name" value="<?php the_title();?>">
 															<div class="row row__inputs">
-																<div class="cell-3 center"><input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__"></div>
+																<div class="cell-3 center"><input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__"></div>
 																<div class="cell-3 center"><input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м"></div>
 																<div class="cell-3 center"><input name="height" size="40" type="text" class="form-control" placeholder="Висота, м"></div>
 																<div class="cell-3 center">
@@ -85,9 +87,11 @@
 									<div class="mobile mobile-form" >
 										<div class="container">
 											<div class="row">
-												<form action="https://aiss.com.ua/zakaz_main.php" method="post">
+                        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                          <input type="hidden" name="action" value="form_integration">
+                          <input type="hidden" name="page-name" value="<?php the_title();?>">
 													<div class="cell-12 center">
-                            <input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__" />
+                            <input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__" />
                           </div>
 													<div class="cell-12 center" style="margin-top: 5px;">
                             <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м" />
@@ -459,9 +463,11 @@
                                 <p class="h2"><span class="main-color"><?php echo $homeCallTitle;?></span><?php echo $homeCallText;?></p>
                               </div>
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <form action="https://aiss.com.ua/zakaz_main.php" method="post">
+                                <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                                  <input type="hidden" name="action" value="form_integration">
+                                  <input type="hidden" name="page-name" value="<?php the_title();?>">
                                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 center item">
-                                    <input name="userphone" size="40" type="text" id="userphone" class="form-control" placeholder="+38(0__)___-__-__" />
+                                    <input name="userphone" size="40" type="tel" id="userphone" class="form-control" placeholder="+38(0__)___-__-__" />
                                   </div>
                                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 center item">
                                     <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м" />
@@ -579,9 +585,11 @@
                                 <p class="h2"><span class="main-color"><?php echo $homeCallTitle;?></span><?php echo $homeCallText;?></p>
                               </div>
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: #333333;">
-                                <form action="https://aiss.com.ua/zakaz_main.php" method="post">
+                                <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                                  <input type="hidden" name="action" value="form_integration">
+                                  <input type="hidden" name="page-name" value="<?php the_title();?>">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                    <input name="userphone" size="40" type="text" class="form-control" placeholder="+38(0__)___-__-__">
+                                    <input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
                                   </div>
 
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
