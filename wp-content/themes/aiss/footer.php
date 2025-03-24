@@ -214,7 +214,10 @@
     </section>
 
   </footer><!-- #colophon -->
+<?php get_template_part('template-parts/popup');?>
 </div><!-- #page -->
+
+
 
 <?php wp_footer(); ?>
 

@@ -76,6 +76,17 @@
 									     'compare' => '=',
 								     )
 							     ) ),
+							Field::make_file('media_type_part_1_video_file', 'Завантажте файл відео (якщо відео не має на Youtube)')
+								->set_type('video')
+								->set_value_type('url')
+								->set_conditional_logic( array(
+									'relation' => 'AND',
+									array(
+										'field' => 'media_type_part_1',
+										'value' => 'video',
+										'compare' => '=',
+									)
+								) ),
 							Field::make_text('media_type_part_1_form_title_1', 'Звичайна частина заголовку')
 							     ->set_conditional_logic( array(
 								     'relation' => 'AND',
@@ -174,6 +185,18 @@
 									     'compare' => '=',
 								     )
 							     ) ),
+
+							Field::make_file('media_type_part_2_video_file', 'Завантажте файл відео (якщо відео не має на Youtube)')
+							     ->set_type('video')
+							     ->set_value_type('url')
+							     ->set_conditional_logic( array(
+								     'relation' => 'AND',
+								     array(
+									     'field' => 'media_type_part_2',
+									     'value' => 'video',
+									     'compare' => '=',
+								     )
+							     ) ),
 							Field::make_text('media_type_part_2_form_title_1', 'Звичайна частина заголовку')
 							     ->set_conditional_logic( array(
 								     'relation' => 'AND',
@@ -232,10 +255,18 @@
 				->add_tab('Відділ продажів', array(
 					Field::make_text('aiss_product_type_page_sale_title', 'Заголовок'),
 					Field::make_text('aiss_product_type_page_sale_btn_text', 'Текст кнопки'),
+					Field::make_complex('aiss_product_type_page_sale_custom_phone', 'Перелік контактних телефонів виключно для цієї сторінки')
+						->add_fields(array(
+							Field::make_text('custom_phone', 'Hомер телефону')
+						)),
+					Field::make_complex('aiss_product_type_page_sale_custom_email', 'Перелік пошт виключно для цієї сторінки')
+					     ->add_fields(array(
+						     Field::make_text('custom_email', 'Пошта')
+					     )),
 					Field::make_image('aiss_product_type_page_sale_big_image', 'Великий банер')
 					     ->set_type('image')
 					     ->set_value_type('url'),
-					Field::make_image('aiss_product_type_page_sale_small_image', 'Маленький банер')
+					Field::make_image('aiss_product_type_page_sale_small_image_custom', 'Маленький банер кастомний')
 					     ->set_type('image')
 					     ->set_value_type('url')
 				));

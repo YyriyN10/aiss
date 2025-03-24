@@ -182,11 +182,18 @@
 													    </div>
 												    </div>
 											    <?php elseif ( $item['media_type_part_1'] == 'video' ):?>
-												    <div class="video-max-Wrapper">
-													    <div class="videoWrapper" data-video="<?php echo $item['media_type_part_1_video'];?>">
-                                <div class="youtube" id="<?php echo $item['media_type_part_1_video'];?>"></div>
-													    </div>
-												    </div>
+                              <?php if( !empty($item['media_type_part_1_video']) ):?>
+                                <div class="video-max-Wrapper">
+                                  <div class="videoWrapper" data-video="<?php echo $item['media_type_part_1_video'];?>">
+                                    <div class="youtube" id="<?php echo $item['media_type_part_1_video'];?>"></div>
+                                  </div>
+                                </div>
+                              <?php endif;?>
+                              <?php if( !empty($item['media_type_part_1_video_file']) ):?>
+                                          <div class="video-wrapper">
+                                            <video src="<?php echo $item['media_type_part_1_video_file'];?>" controls></video>
+                                          </div>
+                              <?php endif;?>
 											    <?php elseif ( $item['media_type_part_1'] == 'form' ):?>
 												    <div class="form-row" style="position: relative;">
 													    <img
@@ -209,10 +216,10 @@
 															    </div>
 															    <div class="row labeform" style="margin-bottom: 30px;">
 																    <div class="center" style="padding: 0px 30px 0;">
-																	    <input style="" name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                      <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
 																    </div>
 																    <div class="center" style="">
-																	    <input style="" name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                      <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
 																    </div>
 																    <div class="center" style="">
 																	    <input style="" name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
@@ -282,11 +289,21 @@
 													    </div>
 												    </div>
 											    <?php elseif ( $item['media_type_part_2'] == 'video' ):?>
-												    <div class="video-max-Wrapper">
-													    <div class="videoWrapper"">
-                                <div class="youtube" id="<?php echo $item['media_type_part_2_video'];?>"></div>
-													    </div>
-												    </div>
+                            <?php if( !empty($item['media_type_part_2_video']) ):?>
+                               <div class="video-max-Wrapper">
+                                  <div class="videoWrapper"">
+                                    <div class="youtube" id="<?php echo $item['media_type_part_2_video'];?>"></div>
+                                  </div>
+                              </div>
+                            <?php endif;?>
+                            <?php if( !empty($item['media_type_part_2_video_file']) ):?>
+                              <div class="video-wrapper">
+                                <video src="<?php echo $item['media_type_part_2_video_file'];?>" controls></video>
+                              </div>
+                            <?php endif;?>
+
+
+
 											    <?php elseif ( $item['media_type_part_2'] == 'form' ):?>
 												    <div class="form-row" style="position: relative;">
 													    <img
@@ -309,10 +326,10 @@
 															    </div>
 															    <div class="row labeform" style="margin-bottom: 30px;">
 																    <div class="center" style="padding: 0px 30px 0;">
-																	    <input style="" name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                      <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
 																    </div>
 																    <div class="center" style="">
-																	    <input style="" name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                      <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
 																    </div>
 																    <div class="center" style="">
 																	    <input style="" name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
@@ -353,6 +370,8 @@
 					    </div>
               <?php
                 $smallSaleBanner = carbon_get_theme_option('aiss_option_small_banner_image');
+                $smallSaleBannerCustom = carbon_get_post_meta( get_the_ID(), 'aiss_product_type_page_sale_small_image_custom' );
+
 
                 if ( $smallSaleBanner ):?>
                 <aside id="tz-right" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
@@ -360,7 +379,12 @@
                     <div class="module-inner">
                       <div class="module-ct">
                         <div class="custom"  >
-                          <img src="<?php echo $smallSaleBanner;?>" alt=""/>
+                          <?php if( !empty( $smallSaleBannerCustom ) ):?>
+                            <img src="<?php echo $smallSaleBannerCustom;?>" alt=""/>
+                           <?php else:?>
+                            <img src="<?php echo $smallSaleBanner;?>" alt=""/>
+                          <?php endif;?>
+
                         </div>
                       </div>
                     </div>
@@ -375,12 +399,16 @@
   <?php
     $saleTitle = carbon_get_post_meta(get_the_ID(), 'aiss_product_type_page_sale_title');
     $saleBtnText = carbon_get_post_meta(get_the_ID(), 'aiss_product_type_page_sale_btn_text');
+    $saleCutomPhone = carbon_get_post_meta(get_the_ID(), 'aiss_product_type_page_sale_custom_phone');
+    $saleCustomEmail = carbon_get_post_meta(get_the_ID(), 'aiss_product_type_page_sale_custom_email');
 
     if ( $saleBtnText && $saleTitle ){
 
       $content = array(
         'title' => $saleTitle,
-        'btn_text' => $saleBtnText
+        'btn_text' => $saleBtnText,
+        'phone_list' => $saleCutomPhone,
+        'email_list' => $saleCustomEmail,
       );
 
       get_template_part('template-parts/sale-banner','', $content);

@@ -6,6 +6,7 @@
 	?>
 
 <section id="tz-position-10-wrapper" class="sale-block">
+
 	<div class="container">
 		<div class="row" id="position-10">
 			<div id="tz-position-10" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  tz container">
@@ -29,40 +30,72 @@
 												if ($contactsList):?>
 													<?php foreach( $contactsList as $item ):?>
 
-														<div class="row" style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
-															<div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo THEME_PATH;?>/assets/img/tel.png" /></div>
-															<div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 0px;">
-																<p class="form">(067) 214-00-44</p>
-																<p class="form">(067) 217-00-44</p>
-															</div>
-														</div>
-														<div class="row" style="margin-top: 5px; margin-left: 0px; margin-right: 0px;">
-															<div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo THEME_PATH;?>/assets/img/viber1.png" /></div>
-															<div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 0px;">
-																<p class="form">(050) 417-00-44</p>
-																<p class="form">(050) 366-00-44</p>
-															</div>
-														</div>
-														<?php if( $item['email_list'] ):?>
-															<div class="row" style="margin-top: 5px; margin-left: 0px; margin-right: 0px;">
-																<div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo THEME_PATH;?>/assets/img/mail.png" /></div>
-																<div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 0px;">
-																	<?php foreach( $item['email_list'] as $emailItem ):?>
-																		<p class="form">
-                                                      <span id="cloak51732">
-                                                        <a href="mailto:<?php echo antispambot($emailItem['email'], 1);?>">
-                                                          <?php echo antispambot($emailItem['email'], 0);?>
-                                                        </a>
-                                                      </span>
-																		</p>
-																	<?php endforeach;?>
-																</div>
-															</div>
-														<?php endif;?>
+                                <?php if( !empty( $args['phone_list']) ):?>
+                                  <div class="row" style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
+                                    <div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo THEME_PATH;?>/assets/img/viber1.png" /></div>
+                                    <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 0px;">
+                                      <?php foreach( $args['phone_list'] as $customPhone ):?>
+                                        <p class="form"><?php echo $customPhone['custom_phone'];?></p>
+                                      <?php endforeach;?>
+                                    </div>
+                                  </div>
+                                <?php else:?>
+                                  <div class="row" style="margin-top: 20px; margin-left: 0px; margin-right: 0px;">
+                                    <div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo THEME_PATH;?>/assets/img/tel.png" /></div>
+                                    <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 0px;">
+                                      <p class="form">(067) 214-00-44</p>
+                                      <p class="form">(067) 217-00-44</p>
+                                    </div>
+                                  </div>
+                                  <div class="row" style="margin-top: 5px; margin-left: 0px; margin-right: 0px;">
+                                    <div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo THEME_PATH;?>/assets/img/viber1.png" /></div>
+                                    <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 0px;">
+                                      <p class="form">(050) 417-00-44</p>
+                                      <p class="form">(050) 366-00-44</p>
+                                    </div>
+                                  </div>
+                                <?php endif;?>
+
+                                <?php if( !empty( $args['email_list'] ) ):?>
+
+                                      <div class="row" style="margin-top: 5px; margin-left: 0px; margin-right: 0px;">
+                                        <div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo THEME_PATH;?>/assets/img/mail.png" /></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 0px;">
+	                                        <?php foreach( $args['email_list'] as $customEmail ):?>
+                                              <p class="form">
+                                                                              <span id="cloak51732">
+                                                                                <a href="mailto:<?php echo antispambot($customEmail['custom_email'], 1);?>">
+                                                                                  <?php echo antispambot($customEmail['custom_email'], 0);?>
+                                                                                </a>
+                                                                              </span>
+                                              </p>
+                          <?php endforeach;?>
+                                        </div>
+                                      </div>
+
+                                <?php else:?>
+                                    <?php if( $item['email_list'] ):?>
+                                                  <div class="row" style="margin-top: 5px; margin-left: 0px; margin-right: 0px;">
+                                                    <div class="col-md-3 col-sm-3 col-xs-3"><img src="<?php echo THEME_PATH;?>/assets/img/mail.png" /></div>
+                                                    <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 0px;">
+                                      <?php foreach( $item['email_list'] as $emailItem ):?>
+                                                          <p class="form">
+                                                                        <span id="cloak51732">
+                                                                          <a href="mailto:<?php echo antispambot($emailItem['email'], 1);?>">
+                                                                            <?php echo antispambot($emailItem['email'], 0);?>
+                                                                          </a>
+                                                                        </span>
+                                                          </p>
+                                      <?php endforeach;?>
+                                                    </div>
+                                                  </div>
+                                    <?php endif;?>
+                                <?php endif;?>
+
 
 													<?php endforeach;?>
 												<?php endif;?>
-											<p style="margin-top: 10px; text-align: center;"><a href="#fca-widget" class="btn btn-medium main-bg"><?php echo $args['btn_text'];?></a>
+											<p style="margin-top: 10px; text-align: center;"><a href="#" data-toggle="modal" data-target="#formModal" class="btn btn-medium main-bg"><?php echo $args['btn_text'];?></a>
 											</p>
 										</div>
 									</div>

@@ -91,8 +91,8 @@
                             <input type="hidden" name="action" value="form_integration">
                             <input type="hidden" name="page-name" value="<?php the_title();?>">
                             <div class="cell-3 center"><input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__" /></div>
-                            <div class="cell-3 center"><input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м" /></div>
-                            <div class="cell-3 center"><input name="height" size="40" type="text" class="form-control" placeholder="Висота, м" /></div>
+                            <div class="cell-3 center"><input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я"></div>
+                            <div class="cell-3 center"><input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ"></div>
                             <div class="cell-3 center"><input name="submit" type="submit" value="<?php echo $productCallFormBtn;?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;" /></div>
                           </form>
                         </div>
@@ -114,8 +114,8 @@
                           <input type="hidden" name="action" value="form_integration">
                           <input type="hidden" name="page-name" value="<?php the_title();?>">
                           <div class="cell-12 center"><input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__" /></div>
-                          <div class="cell-12 center" style="margin-top: 5px;"><input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м" /></div>
-                          <div class="cell-12 center" style="margin-top: 5px;"><input name="height" size="40" type="text" class="form-control" placeholder="Висота, м" /></div>
+                          <div class="cell-12 center" style="margin-top: 5px;"><input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я"></div>
+                          <div class="cell-12 center" style="margin-top: 5px;"><input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ"></div>
                           <div class="cell-12 center" style="margin-top: 5px;"><input name="submit" type="submit" value="Хочу расчет" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;" /></div>
                         </form>
                       </div>
@@ -186,11 +186,23 @@
                                     </div>
                                  </div>
                               <?php elseif ( $item['media_type_part_1'] == 'video' ):?>
-                                <div class="video-max-Wrapper">
+                                <?php if( !empty($item['media_type_part_1_video']) ):?>
+                                        <div class="video-max-Wrapper">
+                                          <div class="videoWrapper" data-video="<?php echo $item['media_type_part_1_video'];?>">
+                                            <div class="youtube" id="<?php echo $item['media_type_part_1_video'];?>"></div>
+                                          </div>
+                                        </div>
+                                <?php endif;?>
+                                <?php if( !empty($item['media_type_part_1_video_file']) ):?>
+                                        <div class="video-wrapper">
+                                          <video src="<?php echo $item['media_type_part_1_video_file'];?>" controls></video>
+                                        </div>
+                                <?php endif;?>
+                                <!--<div class="video-max-Wrapper">
                                   <div class="videoWrapper" >
-                                    <div class="youtube" id="<?php echo $item['media_type_part_1_video'];?>"></div>
+                                    <div class="youtube" id="<?php /*echo $item['media_type_part_1_video'];*/?>"></div>
                                   </div>
-                                </div>
+                                </div>-->
                               <?php elseif ( $item['media_type_part_1'] == 'form' ):?>
                                  <div class="form-row" style="position: relative;">
                                     <img
@@ -213,10 +225,10 @@
                                         </div>
                                       <div class="row labeform" style="margin-bottom: 30px;">
                                         <div class="center" style="padding: 0px 30px 0;">
-                                          <input style="" name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                          <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                         </div>
                                         <div class="center" style="">
-                                          <input style="" name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                          <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                         </div>
                                         <div class="center" style="">
                                           <input style="" name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
@@ -328,10 +340,10 @@
                                             </div>
 
                                             <div class="center item">
-                                              <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                              <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                             </div>
                                             <div class="center item">
-                                              <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                              <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                             </div>
                                             <div class="center item">
                                               <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -365,10 +377,10 @@
                                             </div>
 
                                             <div class="center item">
-                                              <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                              <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                             </div>
                                             <div class="center item">
-                                              <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                              <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                             </div>
                                             <div class="center item">
                                               <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -421,11 +433,23 @@
                                   </div>
                                 </div>
                               <?php elseif ( $item['media_type_part_2'] == 'video' ):?>
-                                 <div class="video-max-Wrapper">
+                                  <?php if( !empty($item['media_type_part_2_video']) ):?>
+                                  <div class="video-max-Wrapper">
+                                    <div class="videoWrapper"">
+                                    <div class="youtube" id="<?php echo $item['media_type_part_2_video'];?>"></div>
+                                  </div>
+                                </div>
+                                <?php endif;?>
+                                <?php if( !empty($item['media_type_part_2_video_file']) ):?>
+                                    <div class="video-wrapper">
+                                      <video src="<?php echo $item['media_type_part_2_video_file'];?>" controls></video>
+                                    </div>
+                                <?php endif;?>
+                                 <!--<div class="video-max-Wrapper">
                                    <div class="videoWrapper">
-                                     <div class="youtube" id="<?php echo $item['media_type_part_2_video'];?>"></div>
+                                     <div class="youtube" id="<?php /*echo $item['media_type_part_2_video'];*/?>"></div>
                                    </div>
-                                 </div>
+                                 </div>-->
                               <?php elseif ( $item['media_type_part_2'] == 'form' ):?>
                                 <div class="form-row" style="position: relative;">
                                   <img
@@ -448,10 +472,10 @@
                                       </div>
                                       <div class="row labeform" style="margin-bottom: 30px;">
                                         <div class="center" style="padding: 0px 30px 0;">
-                                          <input style="" name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                          <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                         </div>
                                         <div class="center" style="">
-                                          <input style="" name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                          <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                         </div>
                                         <div class="center" style="">
                                           <input style="" name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
@@ -550,8 +574,8 @@
                                             <div class="row">
                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: #333333;">
                                                 <h2>
-                                                  <span class="main-color"><?php echo $item['media_type_part_1_t_form_title'];?></span>
-                                                  <br><?php echo $item['media_type_part_1_t_form_subtitle'];?>
+                                                  <span class="main-color"><?php echo $item['media_type_part_2_t_form_title'];?></span>
+                                                  <br><?php echo $item['media_type_part_2_t_form_subtitle'];?>
                                                 </h2>
                                               </div>
                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: #333333;">
@@ -563,13 +587,13 @@
                                                   </div>
 
                                                   <div class="center item">
-                                                    <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                                    <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                                   </div>
                                                   <div class="center item">
-                                                    <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                                    <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                                   </div>
                                                   <div class="center item">
-                                                    <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
+                                                    <input name="submit" type="submit" value="<?php echo $item['media_type_part_2_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
                                                   </div>
                                                 </form>
                                               </div>
@@ -601,10 +625,10 @@
                                           </div>
 
                                           <div class="center item">
-                                            <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                            <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                           </div>
                                           <div class="center item">
-                                            <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                            <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                           </div>
                                           <div class="center item">
                                             <input name="submit" type="submit" value="<?php echo $item['media_type_part_2_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">

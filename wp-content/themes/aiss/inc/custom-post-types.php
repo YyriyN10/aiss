@@ -73,7 +73,7 @@
 				'update_item'       => 'Оновити тип продукту',
 				'add_new_item'      => 'Додати тип продукту',
 				'new_item_name'     => 'New Genre Name',
-				'menu_name'         => 'Категорії меню',
+				'menu_name'         => 'Тип продукту',
 			),
 			'description'           => 'products_tax', // описание таксономии
 			'public'                => true,
@@ -207,7 +207,7 @@
 				'update_item'       => 'Оновити тип сервісу',
 				'add_new_item'      => 'Додати тип сервісу',
 				'new_item_name'     => 'New Genre Name',
-				'menu_name'         => 'Категорії меню',
+				'menu_name'         => 'Тип сервісу',
 			),
 			'description'           => 'service_tax', // описание таксономии
 			'public'                => true,
@@ -494,7 +494,7 @@
 				'update_item'       => 'Оновити тип котла',
 				'add_new_item'      => 'Додати тип котла',
 				'new_item_name'     => 'New Genre Name',
-				'menu_name'         => 'Категорії меню',
+				'menu_name'         => 'Тип котла',
 			),
 			'description'           => 'boilers_tax', // описание таксономии
 			'public'                => true,

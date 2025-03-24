@@ -140,10 +140,10 @@
                                                   </div>
                                                   <div class="row labeform" style="margin-bottom: 30px;">
                                                     <div class="center" style="padding: 0px 30px 0;">
-                                                      <input style="" name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                                      <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                                     </div>
                                                     <div class="center" style="">
-                                                      <input style="" name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                                      <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                                     </div>
                                                     <div class="center" style="">
                                                       <input style="" name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
@@ -255,10 +255,10 @@
                                                         </div>
 
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                                          <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                                          <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                                          <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                                          <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
                                                           <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -292,10 +292,10 @@
                                                         </div>
 
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                                          <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                                          <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                                          <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                                          <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
                                                           <input name="submit" type="submit" value="<?php echo $item['media_type_part_1_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -375,10 +375,10 @@
                                                   </div>
                                                   <div class="row labeform" style="margin-bottom: 30px;">
                                                     <div class="center" style="padding: 0px 30px 0;">
-                                                      <input style="" name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                                      <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                                     </div>
                                                     <div class="center" style="">
-                                                      <input style="" name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                                      <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                                     </div>
                                                     <div class="center" style="">
                                                       <input style="" name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__">
@@ -490,10 +490,10 @@
                                                         </div>
 
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                                          <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                                          <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                                          <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                                          <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
                                                           <input name="submit" type="submit" value="<?php echo $item['media_type_part_2_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -527,10 +527,10 @@
                                                         </div>
 
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                                          <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                                          <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                                          <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                                          <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                                         </div>
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
                                                           <input name="submit" type="submit" value="<?php echo $item['media_type_part_2_t_form_btn'];?>" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">

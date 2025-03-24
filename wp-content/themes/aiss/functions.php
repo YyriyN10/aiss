@@ -434,17 +434,17 @@ add_action( 'init', 'addCustomCategoryInPage' );
 				$userphone = trim($_POST['userphone']);
 			}
 
-			//Проверка поля width     //
-			if(trim($_POST['width']) == '') {
+			//Проверка поля name    //
+			if(trim($_POST['name']) == '') {
 				$hasError = true;
 			} else {
-				$width = trim($_POST['width']);
+				$name = trim($_POST['name']);
 			}
-			//Проверка поля width     //
-			if(trim($_POST['height']) == '') {
+			//Проверка поля city    //
+			if(trim($_POST['city']) == '') {
 				$hasError = true;
 			} else {
-				$height = trim($_POST['height']);
+				$city = trim($_POST['city']);
 			}
 			//Проверка назви сторінки    //
 			if(trim($_POST['page-name']) == '') {
@@ -456,7 +456,7 @@ add_action( 'init', 'addCustomCategoryInPage' );
 			//Если ошибок нет, отправить email    //
 			if(!isset($hasError)) {
 				$emailTo = 'mng8@aiss.com.ua'; //Сюда введите Ваш email //
-				$body = "Заказ на расчет ворот с https://aiss.com.ua/ $pageName \n\nТелефон: $userphone \n\nДанные заказчика:\n\nШирина: $width м\n\nВысота: $height м";
+				$body = "Заказ на расчет ворот с https://aiss.com.ua/ $pageName \n\nТелефон: $userphone \n\nДанные заказчика:\n\nІмʼя: $name\n\nНаселенний пункт: $city";
 				$headers = 'From: aiss.com.ua';
 				$headers.= "Content-Type:text/html; charset=UTF-8";
 				$subject = "Новая заявка с сайта https://aiss.com.ua/ - Расчет ворот $pageName" ;

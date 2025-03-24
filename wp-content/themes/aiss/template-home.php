@@ -72,8 +72,8 @@
                               <input type="hidden" name="page-name" value="<?php the_title();?>">
 															<div class="row row__inputs">
 																<div class="cell-3 center"><input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__"></div>
-																<div class="cell-3 center"><input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м"></div>
-																<div class="cell-3 center"><input name="height" size="40" type="text" class="form-control" placeholder="Висота, м"></div>
+																<div class="cell-3 center"><input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я"></div>
+																<div class="cell-3 center"><input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ"></div>
 																<div class="cell-3 center">
 																	<input name="submit" type="submit" value="Хочу розрахунок" class="btn btn-medium main-bg submit" >
 																</div>
@@ -94,10 +94,10 @@
                             <input name="userphone" size="40" type="tel" class="form-control" placeholder="+38(0__)___-__-__" />
                           </div>
 													<div class="cell-12 center" style="margin-top: 5px;">
-                            <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м" />
+                            <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                           </div>
 													<div class="cell-12 center" style="margin-top: 5px;">
-                            <input name="height" size="40" type="text" class="form-control" placeholder="Высота, м" />
+                            <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                           </div>
 													<div class="cell-12 center" style="margin-top: 5px;">
                             <input name="submit" type="submit" value="Хочу расчет" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;" />
@@ -210,9 +210,18 @@
                                       <div class="main-item-bug-768">
 	                                      <?php while ( $productList->have_posts() ) : $productList->the_post(); ?>
                                           <div class="main-item-bug">
-                                            <a href="<?php the_permalink();?>" class="project-names">
-                                              <i class="fa" aria-hidden="true"></i> <?php echo the_title();?>
-                                            </a>
+                                            <?php
+                                                $customLink = carbon_get_post_meta( get_the_ID(), 'aiss_product_post_fields_custom_url');
+                                                if( !empty( $customLink ) ):?>
+                                                  <a href="<?php echo $customLink;?>" class="project-names">
+                                                    <i class="fa" aria-hidden="true"></i> <?php echo the_title();?>
+                                                  </a>
+                                            <?php else:?>
+                                                  <a href="<?php the_permalink();?>" class="project-names">
+                                                    <i class="fa" aria-hidden="true"></i> <?php echo the_title();?>
+                                                  </a>
+                                            <?php endif;?>
+
                                           </div>
 	                                      <?php endwhile;?>
                                       </div>
@@ -470,10 +479,10 @@
                                     <input name="userphone" size="40" type="tel" id="userphone" class="form-control" placeholder="+38(0__)___-__-__" />
                                   </div>
                                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 center item">
-                                    <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м" />
+                                    <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                   </div>
                                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 center item">
-                                    <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м" />
+                                    <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                   </div>
                                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 center item">
                                     <input name="submit" type="submit" value="Хочу розрахунок" class="btn btn-medium main-bg" />
@@ -593,10 +602,10 @@
                                   </div>
 
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                    <input name="width" size="40" type="text" class="form-control" placeholder="Ширина, м">
+                                    <input style="" name="name" size="40" type="text" class="form-control" placeholder="ВАШЕ ІМ'Я">
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
-                                    <input name="height" size="40" type="text" class="form-control" placeholder="Висота, м">
+                                    <input style="" name="city" size="40" type="text" class="form-control" placeholder="НАСЕЛЕНИЙ ПУНКТ">
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center item">
                                     <input name="submit" type="submit" value="Хочу розрахунок" class="btn btn-medium main-bg" style="padding: 0px 20px; width: 100%;">
@@ -706,7 +715,10 @@
 
 	                                    <?php endforeach;?>
                                 <?php endif;?>
-                                <p style="margin-top: 10px; text-align: center;"><a href="#fca-widget" class="btn btn-medium main-bg"><?php echo $ourVideoSaleBtnText;?></a></p>
+                                <p style="margin-top: 10px; text-align: center;">
+                                  <a href="#" data-toggle="modal" data-target="#formModal" class="btn btn-medium main-bg"><?php echo $ourVideoSaleBtnText;?></a>
+                                </p>
+
                               </div>
                             </div>
                           </div>

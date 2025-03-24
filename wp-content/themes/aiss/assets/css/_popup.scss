@@ -1,0 +1,55 @@
+.modal{
+
+  &.form-modal{
+    .modal-dialog{
+      margin: auto;
+      width: 320px;
+      max-width: 320px;
+
+      .modal-content{
+        margin-top: 100px;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #000000;
+        padding: 24px;
+
+        .modal-header{
+          padding: 0;
+          border: none;
+          position: relative;
+
+          .close{
+            opacity: 1;
+            position: absolute;
+            transition: all 0.5s;
+            outline: none !important;
+            top: -20px;
+            right: -20px;
+          }
+        }
+
+        .modal-body{
+          padding: 50px 0 0 0;
+          border: none;
+
+          h3{
+            text-transform: uppercase;
+            text-align: center;
+            color: red;
+            margin-bottom: 16px;
+            font-family: "Open Sans", Arial, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+          }
+
+          button{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+}

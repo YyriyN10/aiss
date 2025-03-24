@@ -1288,3 +1288,57 @@
   }
 }
 
+.video-wrapper{
+  width: 100% !important;
+
+  video{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.form-row{
+
+  .form-popap-main{
+    @media(max-width: 767px){
+      display: block;
+      position: relative;
+      background: rgba(0, 0, 0, 1);
+      bottom: 0 !important;
+      margin-bottom: 16px;
+      margin-top: -10px;
+      height: 420px;
+      max-width: 100%;
+      border: none;
+      padding-top: 1px;
+
+      .zagolovoc{
+        text-align: center;
+      }
+
+      .labeform{
+        position: relative;
+      }
+
+      /*position: relative;
+      top: 0;
+      right: 50px;
+      bottom: 9px !important;
+      padding: 0;
+      max-width: 300px;
+      background: rgba(0, 0, 0, .75);
+      z-index: 1001;
+      margin: 0;
+      height: auto;
+      border: none;
+      left: auto;
+      background-color: #000000;*/
+    }
+
+    .modal_close{
+      display: none;
+    }
+  }
+
+}
+

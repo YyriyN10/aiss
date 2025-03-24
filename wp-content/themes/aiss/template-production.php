@@ -111,9 +111,17 @@
                                         <div class="main-item-bug-768">
 											<?php while ( $productList->have_posts() ) : $productList->the_post(); ?>
                                               <div class="main-item-bug">
-                                                <a href="<?php the_permalink();?>" class="project-names">
-                                                  <i class="fa" aria-hidden="true"></i> <?php echo the_title();?>
-                                                </a>
+	                                              <?php
+		                                              $customLink = carbon_get_post_meta( get_the_ID(), 'aiss_product_post_fields_custom_url');
+		                                              if( !empty( $customLink ) ):?>
+                                                        <a href="<?php echo $customLink;?>" class="project-names">
+                                                          <i class="fa" aria-hidden="true"></i> <?php echo the_title();?>
+                                                        </a>
+		                                              <?php else:?>
+                                                        <a href="<?php the_permalink();?>" class="project-names">
+                                                          <i class="fa" aria-hidden="true"></i> <?php echo the_title();?>
+                                                        </a>
+		                                              <?php endif;?>
                                               </div>
 											<?php endwhile;?>
                                         </div>

@@ -26,7 +26,9 @@
 			         Field::make_text('aiss_product_post_fields_main_screen_work', 'Час роботи'),
 			         Field::make_image('aiss_product_post_fields_main_screen_image', 'Зображення')
 			              ->set_type('image')
-			              ->set_value_type('url')
+			              ->set_value_type('url'),
+			         Field::make_text('aiss_product_post_fields_custom_url', 'Кастомне посилання на сторінку')
+			            ->set_attribute('type', 'url')
 		         ))
 
 				->add_tab('Форма з закликом', array(
@@ -85,6 +87,17 @@
 						          ) )
 						          ->set_type('image'),
 						     Field::make_text('media_type_part_1_video', 'ID відео з youtube')
+						          ->set_conditional_logic( array(
+							          'relation' => 'AND',
+							          array(
+								          'field' => 'media_type_part_1',
+								          'value' => 'video',
+								          'compare' => '=',
+							          )
+						          ) ),
+						     Field::make_file('media_type_part_1_video_file', 'Завантажте файл відео (якщо відео не має на Youtube)')
+						          ->set_type('video')
+						          ->set_value_type('url')
 						          ->set_conditional_logic( array(
 							          'relation' => 'AND',
 							          array(
@@ -328,6 +341,17 @@
 						          ) )
 						          ->set_type('image'),
 						     Field::make_text('media_type_part_2_video', 'ID відео з youtube')
+						          ->set_conditional_logic( array(
+							          'relation' => 'AND',
+							          array(
+								          'field' => 'media_type_part_2',
+								          'value' => 'video',
+								          'compare' => '=',
+							          )
+						          ) ),
+						     Field::make_file('media_type_part_2_video_file', 'Завантажте файл відео (якщо відео не має на Youtube)')
+							     ->set_type('video')
+							     ->set_value_type('url')
 						          ->set_conditional_logic( array(
 							          'relation' => 'AND',
 							          array(
